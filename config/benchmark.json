@@ -1,0 +1,52 @@
+{
+    "experiment": "p3-quantization-v1",
+  
+    "model": {
+      "source": "Qwen/Qwen2.5-1.5B",
+      "source_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "reference_format": "F16",
+      "quantized_formats": [
+        "Q8_0",
+        "Q6_K",
+        "Q4_K_M",
+        "Q4_0"
+      ]
+    },
+  
+    "runtime": {
+      "llama_cpp_commit": "e71b80510c848c00175924ecf3c40333ccae8eb5",
+      "backend": "Metal",
+      "context": 512,
+      "batch": 256,
+      "threads": 6
+    },
+  
+    "sampling": {
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "temperature": 0.8
+    },
+  
+    "performance": {
+      "prefill_prompt": "prompts/prefill_256.txt",
+      "prefill_tokens": 256,
+  
+      "decode_prompt": "prompts/decode_32.txt",
+      "decode_prompt_tokens": 32,
+      "decode_steps": 128,
+      "ignore_eog_during_decode_benchmark": true,
+  
+      "measured_runs": 5
+    },
+  
+    "warmup": {
+      "prefill_runs": 1,
+      "decode_steps": 1
+    },
+  
+    "quality": {
+        "metric": "perplexity",
+        "corpus": "WikiText-2 test"
+    }
+  }
