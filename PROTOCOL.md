@@ -263,6 +263,31 @@ Each load-time trial begins with the model not loaded and ends only after the mo
 
 The exact load-time timing boundary will be documented in the benchmark harness before results are collected.
 
+#### Harness Timing Boundary
+
+Before load-time results are collected, the benchmark harness defines model
+load time as the wall-clock duration of `llama_model_load_from_file()`.
+
+The timer:
+
+- starts immediately before calling `llama_model_load_from_file()`
+- ends immediately after the call returns successfully
+- excludes `ggml_backend_load_all()`
+- excludes tokenization
+- excludes context creation
+- excludes warm-up and inference
+
+Five load-time trials are collected per format using five separate process
+invocations. Each trial therefore begins with no model loaded in that process.
+
+The operating-system file cache is not explicitly flushed between trials.
+All five raw measurements are retained, and the median is used for the
+summary.
+
+This metric describes llama.cpp model-loading latency under the benchmark
+environment. It should not be interpreted as the time required to physically
+read every model byte from storage.
+
 ## Metrics
 
 All metrics must use the definitions below. Metric definitions will not be changed after benchmark results are observed unless the change is documented as a protocol revision.
