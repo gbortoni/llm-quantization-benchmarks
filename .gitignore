@@ -1,2 +1,5 @@
 .venv/
 models/
+
+# Evaluation corpus
+/data/wiki.test.raw
