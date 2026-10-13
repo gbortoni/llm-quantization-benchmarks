@@ -1,0 +1,39 @@
+P3 perplexity benchmark
+llama.cpp commit: e71b80510c848c00175924ecf3c40333ccae8eb5
+Corpus SHA-256:  173c87a53759e0201f33e0ccf978e510c2042d7f2cb78229d9a50d79b9e7dd08
+Context: 512
+Batch: 256
+Ubatch: 256
+Threads: 6
+
+========================================
+Running F16 perplexity
+========================================
+F16 placement verified.
+F16 final PPL: 9.7928
+
+========================================
+Running Q8_0 perplexity
+========================================
+Q8_0 placement verified.
+Q8_0 final PPL: 9.8015
+
+========================================
+Running Q6_K perplexity
+========================================
+Q6_K placement verified.
+Q6_K final PPL: 9.8512
+
+========================================
+Running Q4_K_M perplexity
+========================================
+Q4_K_M placement verified.
+Q4_K_M final PPL: 10.1388
+
+========================================
+Running Q4_0 perplexity
+========================================
+Q4_0 placement verified.
+Q4_0 final PPL: 10.6195
+
+All perplexity benchmarks complete.

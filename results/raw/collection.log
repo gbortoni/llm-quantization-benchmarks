@@ -1,0 +1,49 @@
+P3 quantization benchmark
+Harness source commit: 38f9a54d74bf2b7433cc4dbda5598c09b72a5a63
+llama.cpp commit: e71b80510c848c00175924ecf3c40333ccae8eb5
+Context: 512
+Batch: 256
+Threads: 6
+Measured runs: 5
+
+========================================
+Running F16
+========================================
+Running load-time trials...
+Running prefill...
+Running decode...
+F16 complete.
+
+========================================
+Running Q8_0
+========================================
+Running load-time trials...
+Running prefill...
+Running decode...
+Q8_0 complete.
+
+========================================
+Running Q6_K
+========================================
+Running load-time trials...
+Running prefill...
+Running decode...
+Q6_K complete.
+
+========================================
+Running Q4_K_M
+========================================
+Running load-time trials...
+Running prefill...
+Running decode...
+Q4_K_M complete.
+
+========================================
+Running Q4_0
+========================================
+Running load-time trials...
+Running prefill...
+Running decode...
+Q4_0 complete.
+
+All performance benchmarks complete.
